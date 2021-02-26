@@ -16,7 +16,7 @@ docker logs b6c91bacfac4
 
 vi gencsv.sh
 
-chmod +xgencsv.sh
+chmod +x gencsv.sh
 
 ./gencsv.sh
 
