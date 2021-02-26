@@ -1,11 +1,19 @@
 # Infracloud
+
 docker pull infracloudio/csvserver:latest
+
 docker pull prom/prometheus:v2.22.0
+
 docker images
+
 docker run -itd  --name csvserver infracloudio/csvserver:latest
+
 docker ps
+
 docker ps -a
+
 docker logs b6c91bacfac4
+
 vi gencsv.sh
 chmod +xgencsv.sh
 ./gencsv.sh
