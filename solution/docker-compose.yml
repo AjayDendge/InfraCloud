@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  web:
+  csvserver:
     image: infracloudio/csvserver
     ports:
     - "9393:9300"
@@ -8,3 +8,13 @@ services:
     - CSVSERVER_BORDER=Orange
     volumes:
     - "/home/ec2-user/infracloud/csvserver/solution/inputFile:/csvserver/inputdata"
+  prometheus:
+    image: prom/prometheus:v2.22.0
+    ports:
+    - "9090:9090"
+    volumes:
+    - "./prometheus.yml:/prometheus/prometheus.yml"
+    command:
+    - '--config.file=/prometheus/prometheus.yml' 
+    depends_on:
+    - csvserver
